@@ -790,6 +790,14 @@
               dragElement.append(scope.itemScope.element.clone());
             }
             else {
+              //  record the width of each cell.
+              if (scope.itemScope.element.prop('tagName') === 'TR') {
+                var itemElements = scope.itemScope.element.children();
+                for (var i = 0; i < itemElements.length; i = 1) {
+                  var td = angular.element(itemElements[i]);
+                  td.css('width', td.outerWidth());
+                }
+              }
               // add hidden placeholder element in original position.
               scope.itemScope.element.after(placeElement);
               // not cloning, so use the original element.
