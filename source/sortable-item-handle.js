@@ -237,7 +237,7 @@
               //  record the width of each cell.
               if (scope.itemScope.element.prop('tagName') === 'TR') {
                 var itemElements = scope.itemScope.element.children();
-                for (var i = 0; i < itemElements.length; i = 1) {
+                for (var i = 0; i < itemElements.length; i += 1) {
                   var td = angular.element(itemElements[i]);
                   td.css('width', td.outerWidth());
                 }
